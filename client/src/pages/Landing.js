@@ -1,4 +1,8 @@
-export default function Landing() {
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
+function Landing(props) {
 
     return (
         <main>
@@ -8,3 +12,7 @@ export default function Landing() {
         </main>
     )
 }
+
+
+
+export default Landing;
