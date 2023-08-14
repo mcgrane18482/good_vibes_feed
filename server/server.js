@@ -20,5 +20,5 @@ app.use(routes);
 
 // Start express server
 db.once('open', () => {
-    app.listen(PORT, () => console.log('Server started on port %s, PORT'));
+    app.listen(PORT, () => console.log('Server started on port %s', PORT));
 });
