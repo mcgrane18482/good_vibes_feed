@@ -48,7 +48,7 @@ export default function AuthForm(props) {
 
         try {
             const res = await axios.post(url, formData);
-
+            console.log(res.data);
             props.setState((oldState) => {
                 return {
                     ...oldState,
@@ -65,6 +65,7 @@ export default function AuthForm(props) {
 
             navigate("/dashboard");
         } catch (err) {
+            console.log(err);
             setErrorMessage(err.response.data.message);
         }
     };
