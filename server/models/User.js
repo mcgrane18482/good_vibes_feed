@@ -11,7 +11,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
         validate: {
-            validator: val => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:com|org|net|gov|edu|mil|biz|info|test)\b$/.test(val)
+            validator: val => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:com|org|net|gov|edu|mil|biz|info)\b$/.test(val)
         }
     },
     password: {
