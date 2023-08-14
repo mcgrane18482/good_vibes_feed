@@ -44,11 +44,11 @@ export default function AuthForm(props) {
     const handleSubmit = async e => {
         e.preventDefault();
 
-        const url = formData.isLogin ? "/api/login" : "/api/register";
+        const url = formData.isLogin ? "/user/login" : "/user/register";
 
         try {
             const res = await axios.post(url, formData);
-
+            console.log(res.data);
             props.setState((oldState) => {
                 return {
                     ...oldState,
@@ -65,6 +65,7 @@ export default function AuthForm(props) {
 
             navigate("/dashboard");
         } catch (err) {
+            console.log(err);
             setErrorMessage(err.response.data.message);
         }
     };

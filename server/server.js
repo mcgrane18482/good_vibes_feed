@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser')
@@ -7,6 +9,8 @@ const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 3333;
 const isProd = process.env.PORT;
+
+
 
 // Middleware
 if (isProd) {
