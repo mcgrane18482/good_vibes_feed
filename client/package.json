@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "sass": "^1.65.1",
     "sass-loader": "^13.3.2"
   }
 }
