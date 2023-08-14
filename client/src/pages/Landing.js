@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 
-function Landing(props) {
+export default function Landing(props) {
 
     return (
         <main>
@@ -12,7 +12,3 @@ function Landing(props) {
         </main>
     )
 }
-
-
-
-export default Landing;
