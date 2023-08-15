@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getArticles } from '../utils/api';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
-export default function Article() {
-    const navigate = useNavigate();
+export default function ArticleList() {
+
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
