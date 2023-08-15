@@ -34,8 +34,8 @@ export default function ArticleList() {
                             <h3>{article.title}</h3>
                             <img alt=''>{article.image}</img>
                             <h5>{article.description}</h5>
-                            {/* <p>{article.content}</p> */}
-                            {/* <p>{article.comments}</p> */}
+                            {/* <p>{article.content}</p>
+                            <p>{article.comments}</p> */}
                         </NavLink>
                     )
                 })}

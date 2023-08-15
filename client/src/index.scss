@@ -180,9 +180,11 @@ form {
         outline: auto;
         border-radius: 5px;
         margin-bottom: 10px;
+        display: inline-block;
     }
 
     #articleLink:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        outline: 2px solid blue;
     }
 }
