@@ -9,7 +9,8 @@ export default function SingleArticle() {
     useEffect(() => {
         const getArticle = async () => {
             try {
-                const res = await getOneArticle(params);
+                console.log(params.id)
+                const res = await getOneArticle(params.id);
                 if (!res.ok) {
                     throw new Error('No article was found with that id')
                 }
@@ -20,13 +21,16 @@ export default function SingleArticle() {
             }
         }
         getArticle();
-    }, [params]);
+    }, [params.id]);
 
     return (
         <>
             <h1>Article</h1>
             <h3>{article.title}</h3>
+            <img alt=''>{article.image}</img>
+            <h5>{article.description}</h5>
             <p>{article.content}</p>
+            <p>{article.comments}</p>
         </>
     )
 }
