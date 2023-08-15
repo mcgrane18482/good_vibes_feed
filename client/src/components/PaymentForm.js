@@ -12,24 +12,24 @@ const CheckoutForm = () => {
   const elements = useElements();
   const [errorMessage, setErrorMessage] = useState(null);
   const [donationAmount, setDonationAmount] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+  const [thankYouMessage, setThankYouMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     if (elements == null || !stripe) {
       return;
     }
-
+  
     const { error: submitError } = await elements.submit();
     if (submitError) {
       setErrorMessage(submitError.message);
       return;
     }
-
-    // Convert donation amount to cents
+  
     const amountInCents = parseFloat(donationAmount) * 100;
-
-    // Create the PaymentIntent and obtain clientSecret from your server endpoint
+  
     const res = await fetch('/create-intent', {
       method: 'POST',
       body: JSON.stringify({ amount: amountInCents }),
@@ -37,44 +37,52 @@ const CheckoutForm = () => {
         'Content-Type': 'application/json',
       },
     });
-
+  
     const { client_secret: clientSecret } = await res.json();
-
-    const { error } = await stripe.confirmPayment({
-      elements,
-      clientSecret,
-      confirmParams: {
-        return_url: 'https://example.com/order/123/complete',
+  
+    const { error } = await stripe.confirmPayment(clientSecret, {
+      payment_method: {
+        card: elements.getElement(PaymentElement),
       },
     });
-
+  
     if (error) {
       setErrorMessage(error.message);
     } else {
-      // Your customer will be redirected to your `return_url`.
+      setSubmitted(true);
+      setThankYouMessage('Thank you for your donation!');
+      setDonationAmount('');
     }
-  };
+  };  
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Donation Amount ($):
-        <input
-          type="number"
-          step="0.01" // Allow decimals for dollars and cents
-          value={donationAmount}
-          onChange={(e) => setDonationAmount(e.target.value)}
-          required
-        />
-      </label>
+      {submitted ? (
+        <div>
+          <p>{thankYouMessage}</p>
+        </div>
+      ) : (
+        <div>
+          <label>
+            Donation Amount ($):
+            <input
+              type="number"
+              step="0.01"
+              value={donationAmount}
+              onChange={(e) => setDonationAmount(e.target.value)}
+              required
+            />
+          </label>
 
-      <PaymentElement />
+          <PaymentElement />
 
-      <button type="submit" disabled={!stripe || !elements}>
-        Pay
-      </button>
+          <button type="submit" disabled={!stripe || !elements}>
+            Pay
+          </button>
 
-      {errorMessage && <div>{errorMessage}</div>}
+          {errorMessage && <div>{errorMessage}</div>}
+        </div>
+      )}
     </form>
   );
 };
