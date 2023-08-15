@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getArticles } from '../utils/api';
 
+
 export default function Article() {
 
     const [articles, setArticles] = useState([]);
@@ -23,6 +24,7 @@ export default function Article() {
 
     return (
 
+
         <div>
             <h3>Articles galore!</h3>
             {articles.map((article) => {
@@ -36,3 +38,4 @@ export default function Article() {
         </div>
     );
 };
+
