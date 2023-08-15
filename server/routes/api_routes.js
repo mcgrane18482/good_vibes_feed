@@ -43,7 +43,16 @@ router.post('/articles/:articleId', async (req, res) => {
 router.delete('/articles/:articleId/:commentId', async (req, res) => {
     try {
         const article = await Article.findOneAndUpdate(
-            { _id: req.params.articleId },
+            {
+                _id: req.params.articleId
+            },
+            {
+                $pull: {
+                    comments: {
+                        commentId: req.params.commentId
+                    }
+                }
+            },
             { new: true }
         );
         if (!article) {
