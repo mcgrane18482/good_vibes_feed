@@ -15,6 +15,8 @@ const articleSchema = new Schema({
     }
 });
 
+articleSchema.index({ title: "text", description: "text" });
+
 const Article = model('Article', articleSchema);
 
 module.exports = Article;
