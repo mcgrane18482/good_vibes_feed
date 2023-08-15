@@ -22,6 +22,7 @@ export default function Header(props) {
             <nav className="row">
                 {props.state.user && <p className="header-username">Welcome, {props.state.user.username}</p>}
                 <NavLink to="/">Home</NavLink>
+                <NavLink to="/support">Support Us</NavLink>
                 {props.state.user ? (
                     <>
                         <NavLink to="/dashboard">Dashboard</NavLink>
