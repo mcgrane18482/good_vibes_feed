@@ -36,7 +36,6 @@ export default function App() {
         }
     }, [state]);
 
-
     return (
         <>
             <Header state={state} setState={setState} />
