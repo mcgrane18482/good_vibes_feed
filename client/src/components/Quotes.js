@@ -27,7 +27,7 @@ export default function Quotes() {
 
     return (
         <div className="quoteSection">
-            <h2 className="quote">{quote}</h2>
+            <h3 className="quote">{quote}</h3>
         </div>
     );
 }
