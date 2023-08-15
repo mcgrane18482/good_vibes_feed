@@ -1,15 +1,15 @@
-import axios from 'axios';
-
 export const getArticles = () => {
-    return axios.get('/api/articles', {
+    return fetch('/api/articles', {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
     });
 };
 
-export const getOneArticle = (param) => {
-    return axios.get(`/api/articles/${param}`, {
+export const getOneArticle = (params) => {
+    return fetch(`/api/articles/${params}`, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json',
         },
