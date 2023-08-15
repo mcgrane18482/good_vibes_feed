@@ -1,6 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Quotes() {
+    const [quote, setQuote] = useState({
+        text: "",
+        author: "",
+        authorLink: ""
+    });
+
     useEffect(() => {
         const script = document.createElement("script");
         script.type = "text/javascript";
@@ -8,6 +14,19 @@ export default function Quotes() {
         script.async = true;
 
         document.body.appendChild(script);
+
+        // Parse quote content at script.src
+        script.onload = () => {
+            const quoteText = document.querySelector("b").nextSibling.innerText.trim();
+            const authorName = document.querySelector("a").innerText;
+            const authorLink = document.querySelector("a").href;
+
+            setQuote({
+                text: quoteText,
+                author: authorName,
+                authorLink
+            });
+        }
 
         // Should avoid memory leaks by removing the script once it is no longer necessary
         return () => {
@@ -18,9 +37,12 @@ export default function Quotes() {
     return (
         <div className="quoteSection">
             <h2 className="quote">
+                {quote.text}
                 <small>
                     <i>
-                        <a href="/quote_of_the_day" target="_blank" rel="nofollow">more Quotes</a>
+                        <a href={quote.authorLink} target="_blank" rel="nofollow">
+                            {quote.author}
+                        </a>
                     </i>
                 </small>
             </h2>
