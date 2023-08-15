@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import $ from "jquery";
 
-
 export default function Quotes() {
     const [quote, setQuote] = useState("");
 
