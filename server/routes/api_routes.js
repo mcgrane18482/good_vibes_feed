@@ -7,7 +7,7 @@ router.get('/articles', async (req, res) => {
 
     try {
 
-        const articles = await Article.find({ $text: { $search: "good happy celebrate sweet rescue safe saved wins succeeds cute hero reunion" } });
+        const articles = await Article.find();
 
         if (articles.length === 0) {
             return res.status(404).json({ message: 'No articles found with those keywords' });

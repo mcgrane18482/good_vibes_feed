@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const commentSchema = require('./Comment');
 
 const articleSchema = new Schema({
     title: {
@@ -12,7 +13,8 @@ const articleSchema = new Schema({
     },
     image: {
         type: String
-    }
+    },
+    comments: [commentSchema]
 });
 
 articleSchema.index({ title: "text", description: "text" });
