@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(routes);
 
 app.get('/stripe-creds', (req, res) => {
-    
+
 });
 
 // Create a PaymentIntent route
@@ -33,10 +33,14 @@ app.post('/create-intent', async (req, res) => {
         const paymentIntent = await stripe.paymentIntents.create({
             amount,
             currency: 'usd',
-            payment_method_types: ['card'],
+            automatic_payment_methods: {
+                enabled: true
+            }
         });
 
         res.json({ client_secret: paymentIntent.client_secret });
+
+
     } catch (error) {
         console.error('Error creating Payment Intent:', error);
         res.status(500).json({ error: 'An error occurred while creating the Payment Intent.' });

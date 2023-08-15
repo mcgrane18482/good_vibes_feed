@@ -31,24 +31,18 @@ const CheckoutForm = () => {
 
         const amountInCents = parseFloat(donationAmount) * 100;
 
-        const res = await fetch('/create-intent', {
-            method: 'POST',
-            body: JSON.stringify({ amount: amountInCents }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
+
+        const { data: { client_secret } } = await axios.post('/create-intent', {
+            amount: amountInCents
         });
 
-        const { client_secret: clientSecret } = await res.json();
-
         const { error } = await stripe.confirmPayment({
-            clientSecret,
+            elements,
+            clientSecret: client_secret,
             confirmParams: {
-                return_url: 'https://www.google.com',
+                return_url: 'http://localhost:3000/redirect',
             },
-            payment_method: {
-                card: elements.getElement(PaymentElement),
-            },
+            redirect: 'always'
         });
 
         if (error) {
@@ -94,21 +88,14 @@ const CheckoutForm = () => {
 
 const stripePromise = loadStripe('pk_test_51NfOh5E0uAKYbFOSiqWMS5UvQr2hskj3tcz2Rnh76OCjP8vXoW0NIFNDxktSP4itivOpsHIRlH6jVGhE4PVe1ORE00PwmjjFkk');
 
+const options = {
+    mode: 'payment',
+    currency: 'usd',
+    amount: 1099,
+
+};
+
 const StripePayment = () => {
-    const [options, setOptions] = useState({
-        mode: 'payment',
-        currency: 'usd',
-        amount: 1099,
-
-    });
-
-    useEffect(() => {
-        axios.get('/stripe-creds')
-            .then((res) => {
-                console.log(res.data);
-            })
-    }, [options])
-
     return (
         <Elements stripe={stripePromise} options={options}>
             <CheckoutForm />
