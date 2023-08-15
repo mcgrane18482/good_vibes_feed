@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Loading from "./components/Loading";
 import Quotes from "./components/Quotes";
 import Redirect from "./components/Redirect";
+import SupportUs from "./components/SupportUs";
 
 // Pages
 import NotFound404 from "./pages/NotFound404";
@@ -56,6 +57,8 @@ export default function App() {
                         <Dashboard state={state} setState={setState} />
                     </Redirect>
                 )} />
+
+                <Route path="/support" element={<SupportUs />} />
 
                 <Route path="*" element={<NotFound404 />} />
             </Routes>
