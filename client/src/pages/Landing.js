@@ -2,7 +2,6 @@ import Article from "../components/Article";
 import Quotes from "../components/Quotes";
 
 export default function Landing() {
-
     return (
         <>
             <Quotes />
@@ -15,6 +14,5 @@ export default function Landing() {
                 <Article />
             </main>
         </>
-
     )
 }
