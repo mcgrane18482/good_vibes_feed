@@ -24,26 +24,24 @@ export default function ArticleList() {
     }, []);
 
     return (
-        <>
-            <div className='articles'>
-                <h3>Find Positive Articles Below:</h3>
-            </div>
+
+        <div className='articles'>
+            <h3>Articles</h3>
             <div className='card'>
                 {articles.map((article) => {
                     return (
-                        <ul>
-                            <NavLink to={`/article/${article._id}`} key={article._id}>
+                        <ul key={article._id}>
+                            <NavLink to={`/article/${article._id}`}>
                                 <h3>{article.title}</h3>
-                                <img>{article.image}</img>
+                                <img alt=''>{article.image}</img>
                                 <h5>{article.description}</h5>
-                                {/* <p>{article.content}</p> */}
-                                {/* <p>{article.comments}</p> */}
+                                {/* <p>{article.content}</p>
+                                <p>{article.comments}</p> */}
                             </NavLink>
                         </ul>
                     )
                 })}
             </div>
-
-        </>
+        </div>
     );
 };
