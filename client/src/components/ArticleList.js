@@ -14,8 +14,9 @@ export default function ArticleList() {
                 if (!res.ok) {
                     throw new Error('No articles found')
                 }
-                const articles = await res.json();
-                setArticles(articles);
+                const articleData = await res.json();
+                console.log(articleData);
+                setArticles(articleData);
             } catch (err) {
                 console.log(err)
             }
@@ -26,21 +27,16 @@ export default function ArticleList() {
     return (
 
 
-        <div className='articles'>
-            <h3>Articles</h3>
-            <div className='card'>
-                {articles.map((article) => {
-                    return (
-                        <NavLink to={`/article/${article._id}`} key={article._id}>
-                            <h3>{article.title}</h3>
-                            <img>{article.image}</img>
-                            <h5>{article.description}</h5>
-                            <p>{article.content}</p>
-                            <p>{article.comments}</p>
-                        </NavLink>
-                    )
-                })}
-            </div>
+        <div>
+            <h3>Articles galore!</h3>
+            {articles.map((article) => {
+                return (
+                    <NavLink to={`/article/${article._id}`} key={article._id}>
+                        <h3>{article.title}</h3>
+                        <h5>{article.description}</h5>
+                    </NavLink>
+                )
+            })}
         </div>
     );
 };
