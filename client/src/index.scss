@@ -87,9 +87,12 @@ header {
 }
 
 .quoteSection {
-    background: lightblue;
+    background-image: url(../public/assets/images/oceanPhoto.png); // https://unsplash.com/photos/XexawgzYOBc
+    background-position: center bottom;
+    background-size: cover;
     padding: 6px 5%;
-    color: darkblue;
+    margin: 0 3%;
+    color: #e0f7ff;
     text-align: center;
     margin-bottom: 25px;
 }
@@ -128,37 +131,35 @@ main {
     border-radius: 10px;
 }
 
+form {
+    width: 400px;
+    margin: 20px auto 0;
 
+    &.dashboard-form {
+        margin-bottom: 25px;
 
-// form {
-//     width: 400px;
-//     margin: 20px auto 0;
+        h2 {
+            margin-bottom: 15px;
+        }
+    }
 
-//     &.dashboard-form {
-//         margin-bottom: 25px;
+    p.error-message {
+        text-align: center;
+        margin-bottom: 10px;
+        color: red;
+    }
 
-//         h2 {
-//             margin-bottom: 15px;
-//         }
-//     }
+    input,
+    button {
+        padding: 5px 10px;
+        margin-bottom: 5px;
+    }
 
-//     p.error-message {
-//         text-align: center;
-//         margin-bottom: 10px;
-//         color: red;
-//     }
-
-//     input,
-//     button {
-//         padding: 5px 10px;
-//         margin-bottom: 5px;
-//     }
-
-//     button {
-//         border: none;
-//         padding: 8px 10px;
-//         font-size: .98rem;
-//         background: #28224e;
-//         color: #fff;
-//     }
-// }
+    button {
+        border: none;
+        padding: 8px 10px;
+        font-size: .98rem;
+        background: #28224e;
+        color: #fff;
+    }
+}
