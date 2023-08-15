@@ -20,6 +20,21 @@ router.get('/articles', async (req, res) => {
     }
 })
 
+// Get a single article by Id
+// localhost:3333/api/articles/:articleId
+router.get('/articles/:articleId', async (req, res) => {
+    try {
+        const article = await Article.findById(req.params.articleId)
+        if (!article) {
+            res.status(404).json({ "message": "No comment found with that id" });
+        }
+        res.json(article);
+    } catch (err) {
+        console.log(err);
+        res.json(err);
+    }
+});
+
 // Add a comment to an article
 // localhost:3333/api/articles/:articleId
 router.post('/articles/:articleId', async (req, res) => {
