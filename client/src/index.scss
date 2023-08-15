@@ -74,9 +74,10 @@ header {
         a {
             color: darkblue;
             text-decoration: none;
+            font-weight: bolder;
 
             &:not(:last-child) {
-                margin-right: 5px;
+                margin-right: 20px;
             }
 
             &.active {
@@ -161,5 +162,27 @@ form {
         font-size: .98rem;
         background: #28224e;
         color: #fff;
+    }
+}
+
+.card {
+    columns: 2;
+    grid-auto-rows: auto;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    ul {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        outline: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    ul:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 }
