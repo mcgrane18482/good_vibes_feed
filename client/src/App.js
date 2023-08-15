@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 // Components
-import Article from "./components/Article";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
 import Quotes from "./components/Quotes";
@@ -11,6 +10,7 @@ import Redirect from "./components/Redirect";
 import SupportUs from "./components/SupportUs";
 
 // Pages
+import SingleArticle from "./pages/SingleArticle";
 import NotFound404 from "./pages/NotFound404";
 import AuthForm from "./pages/AuthForm";
 import Landing from "./pages/Landing";
@@ -59,6 +59,8 @@ export default function App() {
                 )} />
 
                 <Route path="/support" element={<SupportUs />} />
+
+                <Route path="/article/:id" element={<SingleArticle />} />
 
                 <Route path="*" element={<NotFound404 />} />
             </Routes>

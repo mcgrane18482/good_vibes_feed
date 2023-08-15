@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { getArticles } from '../utils/api';
+import { useNavigate, NavLink } from 'react-router-dom';
 
 
 export default function Article() {
-
+    const navigate = useNavigate();
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
@@ -29,10 +30,10 @@ export default function Article() {
             <h3>Articles galore!</h3>
             {articles.map((article) => {
                 return (
-                    <li key={article._id}>
+                    <NavLink to={`/article/${article._id}`} key={article._id}>
                         <h3>{article.title}</h3>
                         <h5>{article.description}</h5>
-                    </li>
+                    </NavLink>
                 )
             })}
         </div>
