@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Quotes() {
-    const [quote, setQuote] = useState("");
+    const [quoteData, setQuoteData] = useState("");
 
     const fetchQuote = async () => {
         try {
@@ -14,8 +14,8 @@ export default function Quotes() {
 
             const result = response.data;
             const randomIndex = Math.floor(Math.random() * result.length);
-            const randomQuote = result[randomIndex]?.quote || "No quotes available.";
-            setQuote(randomQuote);
+            const randomQuoteData = result[randomIndex]|| "No quotes available.";
+            setQuoteData(randomQuoteData);
         } catch (error) {
             console.error("Error: ", error.message);
         }
@@ -27,7 +27,8 @@ export default function Quotes() {
 
     return (
         <div className="quoteSection">
-            <p className="quote">{quote}</p>
+            <p className="quote">"{quoteData.quote}"</p>
+            <p className="author">- {quoteData.author}</p>
         </div>
     );
 }
