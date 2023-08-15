@@ -14,7 +14,7 @@ export default function Landing() {
 
                 <h3>Bringing You Positivity, One Story at a Time</h3>
 
-                <div className="articles">
+                {/* <div className="articles">
                     {!article.length && <p>No articles have been added.</p>}
 
                     {article.map(article => (
@@ -25,8 +25,9 @@ export default function Landing() {
                             </div>
                         </div>
                     ))}
-                </div>
+                </div> */}
                 <Article />
+
             </main>
         </>
     )
