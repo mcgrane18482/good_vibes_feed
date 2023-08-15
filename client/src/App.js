@@ -3,12 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 // Components
+import Article from "./components/Article";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
+import Quotes from "./components/Quotes";
 import Redirect from "./components/Redirect";
 
 // Pages
-import NotFound from "./pages/NotFound404";
+import NotFound404 from "./pages/NotFound404";
 import AuthForm from "./pages/AuthForm";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
@@ -56,7 +58,7 @@ export default function App() {
                     </Redirect>
                 )} />
 
-                <Route path="*" element={<NotFound />} />
+                <Route path="*" element={<NotFound404 />} />
             </Routes>
         </>
     );

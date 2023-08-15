@@ -1,12 +1,11 @@
 import Article from "../components/Article";
+import Quotes from "../components/Quotes";
 
 export default function Landing() {
 
     return (
         <main>
-            <div className="quoteSection">
-                <h1 className="quote"></h1>
-            </div>
+            <Quotes />
 
             <h1>Welcome to the Good Vibes Feed!</h1>
 

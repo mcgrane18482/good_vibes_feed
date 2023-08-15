@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
-function Header(props) {
+export default function Header(props) {
     const logout = async e => {
         e.preventDefault();
 
@@ -34,5 +34,3 @@ function Header(props) {
         </header>
     )
 }
-
-export default Header;
