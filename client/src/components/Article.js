@@ -1,19 +1,38 @@
+import { useEffect, useState } from 'react';
+import { getArticles } from '../utils/api';
+
 export default function Article() {
+
+    const [articles, setArticles] = useState([]);
+
+    useEffect(() => {
+        const getArticleData = async () => {
+            try {
+                const res = await getArticles();
+                if (!res.ok) {
+                    throw new Error('No articles found')
+                }
+                const articles = await res.json();
+                setArticles(articles);
+            } catch (err) {
+                console.log(err)
+            }
+        };
+        getArticleData();
+    }, []);
+
     return (
+
         <div>
             <h3>Articles galore!</h3>
+            {articles.map((article) => {
+                return (
+                    <li key={article._id}>
+                        <h3>{article.title}</h3>
+                        <h5>{article.description}</h5>
+                    </li>
+                )
+            })}
         </div>
-        //  <div className="articles">
-        //             {!article.length && <p>No articles have been added.</p>}
-
-        //             {article.map(article => (
-        //                 <div key={article._id} className="article column">
-        //                     <h3>{article.text}</h3>
-        //                     <div className="column">
-
-        //                     </div>
-        //                 </div>
-        //             ))}
-        //         </div>
-    )
-}
+    );
+};
