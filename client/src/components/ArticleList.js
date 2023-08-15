@@ -30,7 +30,7 @@ export default function ArticleList() {
             <div className='card'>
                 {articles.map((article) => {
                     return (
-                        <NavLink to={`/article/${article._id}`} key={article._id}>
+                        <NavLink id='articleLink' to={`/article/${article._id}`} key={article._id}>
                             <h3>{article.title}</h3>
                             <img alt=''>{article.image}</img>
                             <h5>{article.description}</h5>
