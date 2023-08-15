@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const Article = require('../models/Article');
-// Logic for filtering articles by keywords here
-// $text $search
 
 router.get('/articles', async (req, res) => {
 

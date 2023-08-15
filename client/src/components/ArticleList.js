@@ -14,8 +14,9 @@ export default function ArticleList() {
                 if (!res.ok) {
                     throw new Error('No articles found')
                 }
-                const articles = await res.json();
-                setArticles(articles);
+                const articleData = await res.json();
+                console.log(articleData);
+                setArticles(articleData);
             } catch (err) {
                 console.log(err)
             }
@@ -24,8 +25,6 @@ export default function ArticleList() {
     }, []);
 
     return (
-
-
         <div>
             <h3>Articles galore!</h3>
             {articles.map((article) => {
