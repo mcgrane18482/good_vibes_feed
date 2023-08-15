@@ -25,16 +25,21 @@ export default function Article() {
     return (
 
 
-        <div>
-            <h3>Articles galore!</h3>
-            {articles.map((article) => {
-                return (
-                    <li key={article._id}>
-                        <h3>{article.title}</h3>
-                        <h5>{article.description}</h5>
-                    </li>
-                )
-            })}
+        <div className='articles'>
+            <h3>Articles</h3>
+            <div className='card'>
+                {articles.map((article) => {
+                    return (
+                        <ul key={article._id}>
+                            <h3>{article.title}</h3>
+                            <img>{article.image}</img>
+                            <h5>{article.description}</h5>
+                            <p>{article.content}</p>
+                            <p>{article.comments}</p>
+                        </ul>
+                    )
+                })}
+            </div>
         </div>
     );
 };
