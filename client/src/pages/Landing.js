@@ -11,9 +11,6 @@ export default function Landing() {
 
                 <h3>Bringing You Positivity, One Story at a Time</h3>
 
-
-                <h3>Bringing You Positivity, One Story at a Time</h3>
-
                 {/* <div className="articles">
                     {!article.length && <p>No articles have been added.</p>}
 
@@ -26,8 +23,8 @@ export default function Landing() {
                         </div>
                     ))}
                 </div> */}
-                <Article />
 
+                <Article />
             </main>
         </>
     )
