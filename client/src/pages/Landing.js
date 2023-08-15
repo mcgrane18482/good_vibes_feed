@@ -8,9 +8,9 @@ export default function Landing() {
             <Quotes />
 
             <main>
-                <h1>Welcome to the Good Vibes Feed!</h1>
+                <h1 className="text-center">Welcome to the Good Vibes Feed!</h1>
 
-                <h3>Bringing You Positivity, One Story at a Time</h3>
+                <h3 className="text-center">Bringing You Positivity, One Story at a Time</h3>
 
                 <ArticleList />
             </main>
