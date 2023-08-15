@@ -11,11 +11,11 @@ export default function ArticleList() {
         const getArticleData = async () => {
             try {
                 const res = await getArticles();
-                if (!res.ok) {
+                if (!res) {
                     throw new Error('No articles found')
                 }
-                const articles = await res.json();
-                setArticles(articles);
+
+                setArticles(res);
             } catch (err) {
                 console.log(err)
             }

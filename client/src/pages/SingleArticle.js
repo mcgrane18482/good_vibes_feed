@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getOneArticle } from '../utils/api';
 import { useParams } from "react-router-dom";
 
+
 export default function SingleArticle() {
     const params = useParams();
     const [article, setArticle] = useState({});
@@ -10,11 +11,11 @@ export default function SingleArticle() {
         const getArticle = async () => {
             try {
                 console.log(params.id)
-                const res = await getOneArticle(params.id);
-                if (!res.ok) {
+                const articleData = await getOneArticle(params.id);
+                if (!articleData) {
                     throw new Error('No article was found with that id')
                 }
-                const articleData = await res.json();
+
                 setArticle(articleData);
             } catch (err) {
                 console.log(err);
