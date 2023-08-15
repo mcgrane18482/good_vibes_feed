@@ -14,7 +14,7 @@ export default function Quotes() {
 
             const result = response.data;
             const randomIndex = Math.floor(Math.random() * result.length);
-            const randomQuoteData = result[randomIndex]|| "No quotes available.";
+            const randomQuoteData = result[randomIndex] || "No quotes available.";
             setQuoteData(randomQuoteData);
         } catch (error) {
             console.error("Error: ", error.message);
@@ -27,8 +27,12 @@ export default function Quotes() {
 
     return (
         <div className="quoteSection">
-            <p className="quote">"{quoteData.quote}"</p>
-            <p className="author">- {quoteData.author}</p>
+            {quoteData && (
+                <>
+                    <p className="quote">"{quoteData.quote}"</p>
+                    <p className="author">- {quoteData.author}</p>
+                </>
+            )}
         </div>
     );
 }
