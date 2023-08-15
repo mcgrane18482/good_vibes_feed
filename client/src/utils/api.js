@@ -1,9 +1,17 @@
-import axios from "axios";
-
 export const getArticles = () => {
-    return axios.get('/api/articles');
+    return fetch('/api/articles', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 };
 
-export const getOneArticle = () => {
-    return axios.get('/api/articles/:articleId');
+export const getOneArticle = (param) => {
+    return fetch(`/api/articles/${param}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
 };
