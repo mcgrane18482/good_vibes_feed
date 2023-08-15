@@ -5,7 +5,7 @@ import axios from "axios";
 // Components
 import Header from "./components/Header";
 import Loading from "./components/Loading";
-import Quotes from "./components/Quotes";
+// import Quotes from "./components/Quotes";
 import Redirect from "./components/Redirect";
 import SupportUs from "./components/SupportUs";
 

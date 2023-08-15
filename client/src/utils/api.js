@@ -7,8 +7,8 @@ export const getArticles = () => {
     });
 };
 
-export const getOneArticle = (param) => {
-    return fetch(`/api/articles/${param}`, {
+export const getOneArticle = (params) => {
+    return fetch(`/api/articles/${params}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
