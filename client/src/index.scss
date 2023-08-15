@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300&family=Oswald:wght@300;700&family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+// @import '~bootstrap/scss/bootstrap.scss';
 * {
     margin: 0;
     padding: 0;
@@ -59,10 +60,11 @@ body {
 }
 
 header {
-    background: peachpuff;
+    font-family: 'Indie Flower', cursive;
+    background: rgb(87, 189, 223);
     padding: 6px 3%;
-    color: #fff;
-    // margin-bottom: 25px;
+    color: darkblue;
+    margin-bottom: 5px;
 
     nav {
         p.header-username {
@@ -70,7 +72,7 @@ header {
         }
 
         a {
-            color: #fff;
+            color: darkblue;
             text-decoration: none;
 
             &:not(:last-child) {
@@ -85,9 +87,9 @@ header {
 }
 
 .quoteSection {
-    background: hotpink;
+    background: lightblue;
     padding: 6px 5%;
-    color: #fff;
+    color: darkblue;
     text-align: center;
     margin-bottom: 25px;
 }
@@ -96,47 +98,14 @@ main {
     padding: 0 3%;
 }
 
-.landing,
-.dashboard {
+.landing {
 
-    h1,
+    h2,
     h3 {
         margin-bottom: 25px;
     }
 }
 
-form {
-    width: 400px;
-    margin: 20px auto 0;
-
-    &.dashboard-form {
-        margin-bottom: 25px;
-
-        h2 {
-            margin-bottom: 15px;
-        }
-    }
-
-    p.error-message {
-        text-align: center;
-        margin-bottom: 10px;
-        color: red;
-    }
-
-    input,
-    button {
-        padding: 5px 10px;
-        margin-bottom: 5px;
-    }
-
-    button {
-        border: none;
-        padding: 8px 10px;
-        font-size: .98rem;
-        background: #28224e;
-        color: #fff;
-    }
-}
 
 // 404 Page Styling
 .not-found-container {
@@ -159,8 +128,37 @@ form {
     border-radius: 10px;
 }
 
-// fonts to try:
-// Indie Flower
-// Kalam
-// Luckiest Guy
-// Bangers
+
+
+// form {
+//     width: 400px;
+//     margin: 20px auto 0;
+
+//     &.dashboard-form {
+//         margin-bottom: 25px;
+
+//         h2 {
+//             margin-bottom: 15px;
+//         }
+//     }
+
+//     p.error-message {
+//         text-align: center;
+//         margin-bottom: 10px;
+//         color: red;
+//     }
+
+//     input,
+//     button {
+//         padding: 5px 10px;
+//         margin-bottom: 5px;
+//     }
+
+//     button {
+//         border: none;
+//         padding: 8px 10px;
+//         font-size: .98rem;
+//         background: #28224e;
+//         color: #fff;
+//     }
+// }
