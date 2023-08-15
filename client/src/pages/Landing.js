@@ -4,14 +4,17 @@ import Quotes from "../components/Quotes";
 export default function Landing() {
 
     return (
-        <main>
+        <>
             <Quotes />
 
-            <h1>Welcome to the Good Vibes Feed!</h1>
+            <main>
+                <h1>Welcome to the Good Vibes Feed!</h1>
 
-            <h3>Bringing You Positivity, One Story at a Time</h3>
+                <h3>Bringing You Positivity, One Story at a Time</h3>
 
-            <Article />
-        </main>
+                <Article />
+            </main>
+        </>
+
     )
 }
