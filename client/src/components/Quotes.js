@@ -6,7 +6,7 @@ export default function Quotes() {
 
     const fetchQuote = async () => {
         try {
-            const category = "happiness";
+            const category = ["happiness", "success", "love", "hope", "good", "beauty", ];
             const response = await axios.get("https://api.api-ninjas.com/v1/quotes", {
                 params: { category },
                 headers: { "X-Api-Key": "64QhzObFNMJc5EWatUpSfa1uJtMwuRousydgnQLX" }
