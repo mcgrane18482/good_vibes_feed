@@ -21,6 +21,10 @@ app.use(cookieParser());
 // Load routes here
 app.use(routes);
 
+app.get('/stripe-creds', (req, res) => {
+    
+});
+
 // Create a PaymentIntent route
 app.post('/create-intent', async (req, res) => {
     const { amount } = req.body;
