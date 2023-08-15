@@ -62,7 +62,7 @@ header {
     background: peachpuff;
     padding: 6px 3%;
     color: #fff;
-    margin-bottom: 25px;
+    // margin-bottom: 25px;
 
     nav {
         p.header-username {
@@ -82,6 +82,14 @@ header {
             }
         }
     }
+}
+
+.quoteSection {
+    background: hotpink;
+    padding: 6px 5%;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
 }
 
 main {
@@ -132,7 +140,7 @@ form {
 
 // 404 Page Styling
 .not-found-container {
-    background-image: url("../public/404page.png");
+    background-image: url("../public/assets/images/404optionTwo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
