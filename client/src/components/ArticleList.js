@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { getArticles } from '../utils/api';
+import { NavLink } from 'react-router-dom';
 
 
-export default function Article() {
+export default function ArticleList() {
 
     const [articles, setArticles] = useState([]);
 
@@ -24,24 +25,21 @@ export default function Article() {
 
     return (
 
-
         <div className='articles'>
             <h3>Articles</h3>
             <div className='card'>
                 {articles.map((article) => {
                     return (
-                        <ul key={article._id}>
+                        <NavLink to={`/article/${article._id}`} key={article._id}>
                             <h3>{article.title}</h3>
                             <img>{article.image}</img>
                             <h5>{article.description}</h5>
-                            <p>{article.content}</p>
-                            <p>{article.comments}</p>
-                        </ul>
+                            {/* <p>{article.content}</p> */}
+                            {/* <p>{article.comments}</p> */}
+                        </NavLink>
                     )
                 })}
             </div>
         </div>
     );
 };
-
-

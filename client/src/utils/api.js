@@ -6,3 +6,12 @@ export const getArticles = () => {
         },
     });
 };
+
+export const getOneArticle = (param) => {
+    return fetch(`/api/articles/${param}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+};

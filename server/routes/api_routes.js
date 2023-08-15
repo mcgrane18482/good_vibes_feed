@@ -1,7 +1,5 @@
 const router = require('express').Router();
 const Article = require('../models/Article');
-// Logic for filtering articles by keywords here
-// $text $search
 
 router.get('/articles', async (req, res) => {
 
@@ -19,6 +17,21 @@ router.get('/articles', async (req, res) => {
         res.status(500).json({ message: 'An error occurred while fetching articles' });
     }
 })
+
+// Get a single article by Id
+// localhost:3333/api/articles/:articleId
+router.get('/articles/:articleId', async (req, res) => {
+    try {
+        const article = await Article.findById(req.params.articleId)
+        if (!article) {
+            res.status(404).json({ "message": "No comment found with that id" });
+        }
+        res.json(article);
+    } catch (err) {
+        console.log(err);
+        res.json(err);
+    }
+});
 
 // Add a comment to an article
 // localhost:3333/api/articles/:articleId

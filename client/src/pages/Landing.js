@@ -1,4 +1,4 @@
-import Article from "../components/Article";
+import ArticleList from "../components/ArticleList";
 import Quotes from "../components/Quotes";
 
 export default function Landing() {
@@ -12,8 +12,7 @@ export default function Landing() {
 
                 <h3 className="text-center">Bringing You Positivity, One Story at a Time</h3>
 
-                
-                <Article />
+                <ArticleList />
             </main>
         </>
     )
