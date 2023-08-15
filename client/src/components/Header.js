@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
-function Header(props) {
+export default function Header(props) {
     const logout = async e => {
         e.preventDefault();
 
@@ -17,7 +17,7 @@ function Header(props) {
 
     return (
         <header className="row justify-between align-center">
-            <h3>Good Vibes Feed</h3>
+            <h2>Good Vibes Feed</h2>
 
             <nav className="row">
                 {props.state.user && <p className="header-username">Welcome, {props.state.user.username}</p>}
@@ -34,5 +34,3 @@ function Header(props) {
         </header>
     )
 }
-
-export default Header;
