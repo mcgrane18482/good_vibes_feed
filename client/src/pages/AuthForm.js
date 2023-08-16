@@ -72,7 +72,7 @@ export default function AuthForm(props) {
 
     return (
         <div className="sticky-footer bg-gray-900">
-            <h1 className="text-center header-one text-white">{formData.isLogin ? "Log In" : "Register"}</h1>
+            <h1 className="text-center header-one text-white authForm-title">{formData.isLogin ? "Log In" : "Register"}</h1>
 
             <form id="authForm" onSubmit={handleSubmit} className="column">
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
