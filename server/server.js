@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 
 const express = require('express');
 const path = require('path');
@@ -35,6 +35,7 @@ app.post('/create-intent', async (req, res) => {
         });
 
         res.json({ client_secret: paymentIntent.client_secret });
+
 
     } catch (error) {
         console.error('Error creating Payment Intent:', error);
