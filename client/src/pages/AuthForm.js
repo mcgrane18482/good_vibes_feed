@@ -112,7 +112,7 @@ export default function AuthForm(props) {
                         onChange={handleInputChange}
                         name="confirmPassword"
                         type="password"
-                        value={formData.password}
+                        value={formData.confirmPassword}
                         placeholder="Confirm your password" />
                 )}
 
