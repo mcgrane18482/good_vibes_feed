@@ -5,14 +5,17 @@ import axios from "axios";
 // Components
 import Header from "./components/Header";
 import Loading from "./components/Loading";
+// import Quotes from "./components/Quotes";
 import Redirect from "./components/Redirect";
+import SupportUs from "./components/SupportUs";
+import Footer from "./components/Footer";
 
 // Pages
-import NotFound from "./pages/NotFound404";
+import SingleArticle from "./pages/SingleArticle";
+import NotFound404 from "./pages/NotFound404";
 import AuthForm from "./pages/AuthForm";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
-
 
 export default function App() {
     const [state, setState] = useState({
@@ -33,7 +36,6 @@ export default function App() {
                 });
         }
     }, [state]);
-
 
     return (
         <>
@@ -56,8 +58,14 @@ export default function App() {
                     </Redirect>
                 )} />
 
-                <Route path="*" element={<NotFound />} />
+                <Route path="/support" element={<SupportUs />} />
+
+                <Route path="/article/:id" element={<SingleArticle />} />
+
+                <Route path="*" element={<NotFound404 />} />
             </Routes>
+
+            <Footer />
         </>
     );
 }
