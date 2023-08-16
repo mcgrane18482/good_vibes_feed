@@ -4,7 +4,7 @@ import axios from "axios";
 
 const styles = {
     toggleWrap: {
-        marginTop: "15px"
+        marginTop: "15px",
     },
     label: {
         marginRight: "3px"
@@ -74,7 +74,7 @@ export default function AuthForm(props) {
         <div className="sticky-footer">
             <h1 className="text-center">{formData.isLogin ? "Log In" : "Register"}</h1>
 
-            <form onSubmit={handleSubmit} className="column">
+            <form id="authForm" onSubmit={handleSubmit} className="column">
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
 
                 {!formData.isLogin && (
@@ -83,7 +83,7 @@ export default function AuthForm(props) {
                         name="username"
                         type="text"
                         value={formData.username}
-                        placeholder="Enter your Username" />
+                        placeholder="Enter your username" />
                 )}
                 <input
                     onChange={handleInputChange}
@@ -97,7 +97,7 @@ export default function AuthForm(props) {
                     type="password"
                     value={formData.password}
                     placeholder="Enter your password" />
-                <button>Submit</button>
+                <button id="authButton">Submit</button>
                 <div className="toggle-wrap row justify-center align-center" style={styles.toggleWrap}>
                     <label style={styles.label} htmlFor="login">Login</label>
                     <input
