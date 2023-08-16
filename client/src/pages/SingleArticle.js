@@ -29,7 +29,7 @@ export default function SingleArticle() {
         <div className="sticky-footer">
             <h1>Article</h1>
             <h3>{article.title}</h3>
-            {/* <img alt=''>{article.urlToImage}</img> */}
+            <img src={article.urlToImage} alt=''/>
             <h5>{article.description}</h5>
             <p>{article.content}</p>
             <a href={article.url}>{article.url}</a>
