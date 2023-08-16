@@ -107,13 +107,14 @@ export default function AuthForm(props) {
                     type="password"
                     value={formData.password}
                     placeholder="Enter your password" />
-
-                <input
-                    onChange={handleInputChange}
-                    name="confirmPassword"
-                    type="password"
-                    value={formData.password}
-                    placeholder="Confirm your password" />
+                {!formData.isLogin && (
+                    <input
+                        onChange={handleInputChange}
+                        name="confirmPassword"
+                        type="password"
+                        value={formData.password}
+                        placeholder="Confirm your password" />
+                )}
 
                 <button id="authButton">Submit</button>
 
