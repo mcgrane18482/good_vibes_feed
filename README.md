@@ -17,6 +17,7 @@ The project consists of both frontend and backend components. The frontend is bu
 
 ## Getting Started
 
+To run the Good Vibes Feed app [locally](http://localhost:3000/), follow the steps below.
 
 ### Installation
 1. Clone the repository:
@@ -44,7 +45,7 @@ We have two options. To run the backend or frontend individually, follow these s
    npm start
    ```
 
-3. Open your web browser and navigate to `ADD LINK HERE` to use the Good Vibes Feed app.
+3. Open your web browser and navigate to [localhost](http://localhost:3000/) to use the Good Vibes Feed app.
 
 If you want to run both sides concurrently, follow these steps from the root.
 1. Start the frontend development server:
