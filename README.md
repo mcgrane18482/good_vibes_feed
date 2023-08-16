@@ -85,4 +85,6 @@ The Good Vibes Feed project is licensed under the [MIT License](LICENSE). You ar
 
 Thank you for checking out the Good Vibes Feed project! We hope you enjoy using the app and find it a source of positivity and inspiration. If you have any questions or feedback, please don't hesitate to contact us.
 
-Created with ❤️ by the Good Vibes Feed Team ([Thomas Szentirmay](https://github.com/ThomasSzentirmay), [Ryan Wysocki](https://github.com/rpwysocki), [Erin McGrane](https://github.com/mcgrane18482), [J.P. King](https://github.com/jp-king-1337), & [Brandon Lumar](https://github.com/brlumar)).
+Created with ❤️ by the Good Vibes Feed Team:
+
+[Thomas Szentirmay](https://github.com/ThomasSzentirmay) - [Ryan Wysocki](https://github.com/rpwysocki) - [Erin McGrane](https://github.com/mcgrane18482) - [J.P. King](https://github.com/jp-king-1337) - [Brandon Lumar](https://github.com/brlumar)
