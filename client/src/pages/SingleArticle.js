@@ -26,7 +26,7 @@ export default function SingleArticle() {
     }, [params.id]);
 
     return (
-        <>
+        <div className="sticky-footer">
             <h1>Article</h1>
             <h3>{article.title}</h3>
             {/* <img alt=''>{article.urlToImage}</img> */}
@@ -34,6 +34,6 @@ export default function SingleArticle() {
             <p>{article.content}</p>
             <a href={article.url}>{article.url}</a>
             <p>{article.comments}</p>
-        </>
+        </div>
     )
 }
