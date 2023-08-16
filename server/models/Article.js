@@ -1,5 +1,4 @@
-const { Schema, model } = require('mongoose');
-const commentSchema = require('./Comment');
+const { Schema, model, Types } = require('mongoose');
 
 const articleSchema = new Schema({
     title: {
@@ -17,7 +16,10 @@ const articleSchema = new Schema({
     url: {
         type: String
     },
-    comments: [commentSchema]
+    comments: [{
+        type: Types.ObjectId,
+        ref: 'Comment'
+    }]
 });
 
 articleSchema.index({ title: "text", description: "text" });

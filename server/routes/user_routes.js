@@ -2,28 +2,28 @@ const router = require('express').Router();
 const User = require('../models/User');
 const { createToken, validateToken } = require("../auth")
 
-// We don't need this yet
-// async function isAuthenticated(req, res, next) {
-//     try {
-//         const token = req.cookies.token;
 
-//         if (!token) throw new Error("You are not authorized to perform that action.");
+async function isAuthenticated(req, res, next) {
+    try {
+        const token = req.cookies.token;
 
-//         const data = await validateToken(token);
+        if (!token) throw new Error("You are not authorized to perform that action.");
 
-//         const user = await User.findById(data.user_id);
+        const data = await validateToken(token);
 
-//         req.user = user;
+        const user = await User.findById(data.user_id);
 
-//         next();
-//     }
-//     catch (err) {
-//         return res.status(401).send({
-//             error: true,
-//             message: err.message
-//         });
-//     }
-// }
+        req.user = user;
+
+        next();
+    }
+    catch (err) {
+        return res.status(401).send({
+            error: true,
+            message: err.message
+        });
+    }
+}
 
 // Register user
 router.post("/register", async (req, res) => {
