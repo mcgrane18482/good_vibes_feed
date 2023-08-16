@@ -178,6 +178,23 @@ form {
     }
 }
 
+#paymentForm,
+#authForm {
+    background-color: lightblue;
+    border-radius: 5px;
+    padding: 3%;
+}
+
+#paymentButton {
+    margin-top: 20px;
+}
+
+#authButton {
+    margin-top: 5px;
+    align-self: center;
+    width: 50%;
+}
+
 .card {
     columns: 2;
     // grid-auto-rows: auto;
