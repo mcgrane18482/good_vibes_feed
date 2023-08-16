@@ -25,13 +25,13 @@ export default function SingleArticle() {
     }, [params.id]);
 
     return (
-        <>
+        <div className="h-full">
             <h1>Article</h1>
             <h3>{article.title}</h3>
             <img alt=''>{article.image}</img>
             <h5>{article.description}</h5>
             <p>{article.content}</p>
             <p>{article.comments}</p>
-        </>
+        </div>
     )
 }
