@@ -18,19 +18,21 @@ export default function Header(props) {
     return (
         <header className="row justify-between align-center">
 
-            <h1 className='text-center'>Good Vibes Feed</h1>
+            <NavLink to="/" className="header-title-link">
+                <h1 className='text-center'>Good Vibes Feed</h1>
+            </NavLink>
 
             <nav className="row">
                 {props.state.user && <p className="header-username">Welcome, {props.state.user.username}</p>}
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/support">Support Us</NavLink>
+                <NavLink className="transition duration-300 hover:text-blue-600" to="/">Home</NavLink>
+                <NavLink className="transition duration-300 hover:text-blue-600" to="/support">Support Us</NavLink>
                 {props.state.user ? (
                     <>
-                        <NavLink to="/dashboard">Dashboard</NavLink>
-                        <NavLink onClick={logout} to="/logout">Log Out</NavLink>
+                        {/* <NavLink className="transition duration-300 hover:text-blue-600" to="/dashboard">Dashboard</NavLink> */}
+                        <NavLink className="transition duration-300 hover:text-blue-600" onClick={logout} to="/logout">Log Out</NavLink>
                     </>
                 ) : (
-                    <NavLink to="/auth">Login or Register</NavLink>
+                    <NavLink className="transition duration-300 hover:text-blue-600" to="/auth">Login or Register</NavLink>
                 )}
             </nav>
         </header>

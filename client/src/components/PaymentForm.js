@@ -55,7 +55,7 @@ const CheckoutForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form id='paymentForm' onSubmit={handleSubmit}>
             {submitted ? (
                 <div>
                     <p>{thankYouMessage}</p>
@@ -64,18 +64,19 @@ const CheckoutForm = () => {
                 <div>
                     <label>
                         Donation Amount ($):
+                    </label>
                         <input
                             type="number"
                             step="0.01"
                             value={donationAmount}
                             onChange={(e) => setDonationAmount(e.target.value)}
                             required
+                            className='paymentform-input'
                         />
-                    </label>
 
                     <PaymentElement />
 
-                    <button type="submit" disabled={!stripe || !elements}>
+                    <button id='paymentButton' type="submit" disabled={!stripe || !elements}>
                         Pay
                     </button>
 

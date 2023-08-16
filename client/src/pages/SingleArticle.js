@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getOneArticle } from '../utils/api';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import article from '../pages/styles/article.scss';
 import Comment from '../components/Comment';
-
 
 export default function SingleArticle() {
     const params = useParams();
@@ -31,14 +30,12 @@ export default function SingleArticle() {
     useEffect(() => {
         const getArticle = async () => {
             try {
-                console.log(params.id)
                 const articleData = await getOneArticle(params.id);
                 if (!articleData) {
                     throw new Error('No article was found with that id')
                 }
                 console.log(articleData);
                 setArticle(articleData);
-                console.log(article.urlToImage);
             } catch (err) {
                 console.log(err);
             }
@@ -48,6 +45,7 @@ export default function SingleArticle() {
 
 
     return (
+<<<<<<< HEAD
         <>
             {article && (
                 <div className="article-container">
@@ -73,5 +71,26 @@ export default function SingleArticle() {
                 </div>
             )}
         </>
+=======
+        <div className="bg-gradient-to-b from-gray-800 to-gray-900 text-white min-h-screen">
+            <main className="max-w-5xl mx-auto px-4 py-12">
+                <div className="bg-gray-600 rounded-lg shadow-lg p-8">
+                    <h3 className="text-xl md:text-2xl font-semibold mb-2">{article.title}</h3>
+                    <img src={article.urlToImage} alt='' className="w-full rounded-lg mb-4" />
+                    <h5 className="text-lg md:text-xl mb-2">{article.description}</h5>
+                    <p className="mb-4">{article.content}</p>
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={article.url}
+                        className="text-blue-500 hover:underline mb-4"
+                    >
+                        {article.url}
+                    </a>
+                    <p className="mb-4">Comments: {article.comments}</p>
+                </div>
+            </main>
+        </div>
+>>>>>>> 1ea86613762e3d392d0efc744b3481dff899e477
     )
 }

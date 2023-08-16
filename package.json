@@ -17,6 +17,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "concurrently": "^8.2.0"
+        "autoprefixer": "^10.4.15",
+        "axios": "^1.4.0",
+        "concurrently": "^8.2.0",
+        "postcss": "^8.4.28"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.3.3"
     }
 }
