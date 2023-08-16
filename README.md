@@ -71,10 +71,9 @@ The frontend is built using React and showcases the Good Vibes Feed interface. U
 
 Key files and folders:
 - `client/src/App.js`: The main React component rendering the app's UI.
-- `client/src/components/Article.js`: Renders individual articles with details and comments.
+- `client/src/pages/SingleArticle.js`: Renders individual articles with details and comments.
 - `client/src/components/Comment.js`: Displays comments for an article.
-- `client/src/components/LoginForm.js`: Provides a login form for users.
-- `client/src/components/RegisterForm.js`: Offers a registration form for new users.
+- `client/src/pages/AuthForm.js`: Provides a login and registration form for users.
 
 ## Contributing
 Contributions to the Good Vibes Feed project are welcome! Feel free to submit issues, suggestions, or pull requests. When contributing code changes, please follow the existing coding style and conventions.
