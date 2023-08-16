@@ -32,7 +32,7 @@ export default function ArticleList() {
                         <ul key={article._id}>
                             <NavLink to={`/article/${article._id}`}>
                                 <h3>{article.title}</h3>
-                                {/* <img alt=''>{article.urlToImage}</img> */}
+                                <img src={article.urlToImage} alt=''/>
                                 <h5>{article.description}</h5>
                                 {/* <p>{article.content}</p>
                                 <p>{article.comments}</p> */}
