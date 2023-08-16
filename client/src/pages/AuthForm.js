@@ -19,6 +19,7 @@ export default function AuthForm(props) {
         username: "",
         email: "",
         password: "",
+        confirmPassword: "",
         isLogin: true
     });
     const [errorMessage, setErrorMessage] = useState("");
@@ -44,6 +45,11 @@ export default function AuthForm(props) {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        if (!formData.isLogin && formData.password !== formData.confirmPassword) {
+            setErrorMessage("Passwords do not match.");
+            return;
+        }
+
         const url = formData.isLogin ? "/user/login" : "/user/register";
 
         try {
@@ -60,6 +66,7 @@ export default function AuthForm(props) {
                 username: "",
                 email: "",
                 password: "",
+                confirmPassword: "",
                 isLogin: true
             });
 
@@ -78,6 +85,7 @@ export default function AuthForm(props) {
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
 
                 {!formData.isLogin && (
+
                     <input
                         onChange={handleInputChange}
                         name="username"
@@ -85,21 +93,33 @@ export default function AuthForm(props) {
                         value={formData.username}
                         placeholder="Enter your username" />
                 )}
+
                 <input
                     onChange={handleInputChange}
                     name="email"
                     type="email"
                     value={formData.email}
                     placeholder="Enter your email" />
+
                 <input
                     onChange={handleInputChange}
                     name="password"
                     type="password"
                     value={formData.password}
                     placeholder="Enter your password" />
+
+                <input
+                    onChange={handleInputChange}
+                    name="confirmPassword"
+                    type="password"
+                    value={formData.password}
+                    placeholder="Confirm your password" />
+
                 <button id="authButton">Submit</button>
+
                 <div className="toggle-wrap row justify-center align-center" style={styles.toggleWrap}>
                     <label style={styles.label} htmlFor="login">Login</label>
+
                     <input
                         name="isLogin"
                         onChange={handleInputChange}
@@ -109,6 +129,7 @@ export default function AuthForm(props) {
                         value="login"
                         checked={formData.isLogin} />
                     <label style={styles.label} htmlFor="register">Register</label>
+
                     <input
                         name="isLogin"
                         onChange={handleInputChange}
