@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getArticles } from '../utils/api';
 import { NavLink } from 'react-router-dom';
 
-
 export default function ArticleList() {
 
     const [articles, setArticles] = useState([]);
