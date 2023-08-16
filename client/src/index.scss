@@ -178,6 +178,16 @@ form {
     }
 }
 
+#paymentForm {
+    background-color: lightblue;
+    border-radius: 5px;
+    padding: 3%;
+}
+
+#paymentButton {
+    margin-top: 20px;
+}
+
 .card {
     columns: 2;
     // grid-auto-rows: auto;
