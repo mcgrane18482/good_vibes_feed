@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <footer className="bg-gray-700 text-white py-8">
             <div className="container mx-auto text-center">
-                <h1 className="text-xl font-semibold mb-2">Find us on your favorite socials!</h1>
+                <h1 className="text-xl font-semibold mb-2">Find some positive news on your favorite socials!</h1>
                 <div className="flex justify-center space-x-4">
                     {/* Social media links */}
                     <a

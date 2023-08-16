@@ -28,7 +28,7 @@ export default function Header(props) {
                 <NavLink className="transition duration-300 hover:text-blue-600" to="/support">Support Us</NavLink>
                 {props.state.user ? (
                     <>
-                        <NavLink className="transition duration-300 hover:text-blue-600" to="/dashboard">Dashboard</NavLink>
+                        {/* <NavLink className="transition duration-300 hover:text-blue-600" to="/dashboard">Dashboard</NavLink> */}
                         <NavLink className="transition duration-300 hover:text-blue-600" onClick={logout} to="/logout">Log Out</NavLink>
                     </>
                 ) : (
