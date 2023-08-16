@@ -178,7 +178,8 @@ form {
     }
 }
 
-#paymentForm {
+#paymentForm,
+#authForm {
     background-color: lightblue;
     border-radius: 5px;
     padding: 3%;
@@ -186,6 +187,12 @@ form {
 
 #paymentButton {
     margin-top: 20px;
+}
+
+#authButton {
+    margin-top: 5px;
+    align-self: center;
+    width: 50%;
 }
 
 .card {
