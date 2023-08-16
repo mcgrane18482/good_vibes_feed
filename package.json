@@ -11,7 +11,9 @@
         "install:server": "cd ./server && npm i",
         "install:scraper": "cd ./scraper && npm i",
         "install": "concurrently \"npm run install:client\" \"npm run install:server\" \"npm run install:scraper\"",
-        "scrape": "node ./server/scraper/index.js"
+        "scrape": "node ./scraper/index.js",
+        "build": "cd ./client && npm run build",
+        "start": "cd ./server && node server.js"
     },
     "keywords": [],
     "author": "",
