@@ -8,25 +8,25 @@ const Footer = () => {
         <div className="flex justify-center space-x-4">
           {/* Social media links */}
           <a
-            href="#facebook"
+            href="https://www.facebook.com/profile.php?id=100092609509439"
             className="text-gray-400 hover:text-white transition duration-300"
           >
             <i className="fab fa-facebook-f text-2xl"></i>
           </a>
           <a
-            href="#twitter"
+            href="https://twitter.com/PositiveNewsUK"
             className="text-gray-400 hover:text-white transition duration-300"
           >
             <i className="fab fa-twitter text-2xl"></i>
           </a>
           <a
-            href="#instagram"
+            href="https://www.instagram.com/globalpositivenews/?hl=en"
             className="text-gray-400 hover:text-white transition duration-300"
           >
             <i className="fab fa-instagram text-2xl"></i>
           </a>
           <a
-            href="#linkedin"
+            href="https://www.linkedin.com/company/smart-nut/"
             className="text-gray-400 hover:text-white transition duration-300"
           >
             <i className="fab fa-linkedin-in text-2xl"></i>
