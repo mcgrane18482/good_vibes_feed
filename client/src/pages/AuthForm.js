@@ -71,7 +71,7 @@ export default function AuthForm(props) {
     };
 
     return (
-        <>
+        <div className="sticky-footer">
             <h1 className="text-center">{formData.isLogin ? "Log In" : "Register"}</h1>
 
             <form onSubmit={handleSubmit} className="column">
@@ -119,6 +119,6 @@ export default function AuthForm(props) {
                         checked={!formData.isLogin} />
                 </div>
             </form>
-        </>
+        </div>
     )
 }

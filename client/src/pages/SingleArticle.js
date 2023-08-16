@@ -25,7 +25,7 @@ export default function SingleArticle() {
     }, [params.id]);
 
     return (
-        <div className="h-full">
+        <div className="sticky-footer">
             <h1>Article</h1>
             <h3>{article.title}</h3>
             <img alt=''>{article.image}</img>

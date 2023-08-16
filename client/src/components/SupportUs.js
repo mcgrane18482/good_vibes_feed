@@ -3,7 +3,7 @@ import PaymentForm from './PaymentForm';
 
 const SupportUs = () => {
   return (
-    <div>
+    <div className='sticky-footer'>
       <h2>Support Us</h2>
       <p>Your support helps us continue spreading positivity!</p>
       <PaymentForm /> 

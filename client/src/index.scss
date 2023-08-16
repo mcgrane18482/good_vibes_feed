@@ -32,6 +32,10 @@ body {
 }
 
 // Global Classes
+.sticky-footer {
+    min-height: 73.7vh;
+}
+
 .row,
 .column {
     display: flex;
