@@ -5,8 +5,6 @@ import axios from "axios";
 const styles = {
     toggleWrap: {
         marginTop: "15px",
-        // display: "flex",
-        // alignItems: "center",
     },
     label: {
         marginRight: "3px"
