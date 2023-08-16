@@ -18,7 +18,9 @@ export default function Header(props) {
     return (
         <header className="row justify-between align-center">
 
-            <h1 className='text-center'>Good Vibes Feed</h1>
+            <NavLink to="/" className="header-title-link">
+                <h1 className='text-center'>Good Vibes Feed</h1>
+            </NavLink>
 
             <nav className="row">
                 {props.state.user && <p className="header-username">Welcome, {props.state.user.username}</p>}

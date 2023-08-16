@@ -213,3 +213,11 @@ form {
 .articles {
     margin-bottom: 20px;
 }
+
+.header-title-link {
+    text-decoration: none;
+}
+
+.header-title-link:visited {
+    color: inherit;
+}
