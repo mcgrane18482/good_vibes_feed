@@ -32,6 +32,17 @@ body {
 }
 
 // Global Classes
+.header-one {
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.header-three {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
 .sticky-footer {
     min-height: 73.7vh;
 }
