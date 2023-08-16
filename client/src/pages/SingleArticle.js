@@ -31,7 +31,7 @@ export default function SingleArticle() {
                 <img src={article.urlToImage} alt='' className="w-full rounded-lg mb-4" />
                 <h5 className="text-lg mb-2">{article.description}</h5>
                 <p className="mb-4">{article.content}</p>
-                <a href={article.url} className="text-blue-500 hover:underline mb-4">
+                <a target="_blank" rel="noopener noreferrer" href={article.url} className="text-blue-500 hover:underline mb-4">
                     {article.url}
                 </a>
                 <p className="mb-4">Comments: {article.comments}</p>

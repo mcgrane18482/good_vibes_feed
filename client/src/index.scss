@@ -19,11 +19,6 @@ body,
     height: 100%;
 }
 
-.paymentform-input {
-    margin-bottom: 30px;
-    border-radius: 5px;
-}
-
 #root {
     flex: 1;
 }
@@ -101,7 +96,7 @@ header {
     background: rgb(87, 189, 223);
     padding: 6px 3%;
     color: darkblue;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     height: 75px;
 
     h1 {
@@ -288,4 +283,9 @@ form {
 
 .header-title-link:visited {
     color: inherit;
+}
+
+.paymentform-input {
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
