@@ -60,11 +60,11 @@ If you want to run both sides concurrently, follow these steps from the root.
 The backend is built using Node.js and Express. It provides APIs for user authentication, registration, login, and article management. MongoDB is used as the database to store articles and user information. The backend code is located in the `server` directory.
 
 Key files and folders:
-- `server/api_routes.js`: Contains APIs for managing articles and comments.
-- `server/user_routes.js`: Provides user authentication and authorization APIs.
+- `server/routes/api_routes.js`: Contains APIs for managing articles and comments.
+- `server/routes/user_routes.js`: Provides user authentication and authorization APIs.
 - `server/models/Article.js`: Defines the MongoDB schema for articles.
 - `server/models/User.js`: Defines the MongoDB schema for users.
-- `server/auth.js`: Implements JWT token creation and validation.
+- `server/auth/index.js`: Implements JWT token creation and validation.
 
 ## Frontend
 The frontend is built using React and showcases the Good Vibes Feed interface. Users can read articles and leave comments. The frontend code is located in the `client` directory.
