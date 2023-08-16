@@ -63,7 +63,7 @@ export default function AuthForm(props) {
                 isLogin: true
             });
 
-            navigate("/dashboard");
+            navigate("/");
         } catch (err) {
             console.log(err);
             setErrorMessage(err.response.data.message);

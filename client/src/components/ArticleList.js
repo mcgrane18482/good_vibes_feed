@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { getArticles } from '../utils/api';
 import { NavLink } from 'react-router-dom';
 
-
 export default function ArticleList() {
 
     const [articles, setArticles] = useState([]);
@@ -33,7 +32,7 @@ export default function ArticleList() {
                         <ul key={article._id}>
                             <NavLink to={`/article/${article._id}`}>
                                 <h3>{article.title}</h3>
-                                <img alt=''>{article.image}</img>
+                                <img alt=''>{article.urlToImage}</img>
                                 <h5>{article.description}</h5>
                                 {/* <p>{article.content}</p>
                                 <p>{article.comments}</p> */}

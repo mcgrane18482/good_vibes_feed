@@ -17,6 +17,7 @@ export default function SingleArticle() {
                 }
 
                 setArticle(articleData);
+                console.log(article.urlToImage);
             } catch (err) {
                 console.log(err);
             }
@@ -28,9 +29,10 @@ export default function SingleArticle() {
         <div className="sticky-footer">
             <h1>Article</h1>
             <h3>{article.title}</h3>
-            <img alt=''>{article.image}</img>
+            {/* <img alt=''>{article.urlToImage}</img> */}
             <h5>{article.description}</h5>
             <p>{article.content}</p>
+            <a href={article.url}>{article.url}</a>
             <p>{article.comments}</p>
         </div>
     )
