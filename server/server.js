@@ -1,4 +1,3 @@
-require("dotenv").config();
 
 const express = require('express');
 const path = require('path');
@@ -7,14 +6,16 @@ const db = require('./config/connection');
 const routes = require('./routes');
 const stripe = require('stripe')('sk_test_51NfOh5E0uAKYbFOS6PQvI3zQq0mgbSCPa7ZnZ8xjEvLkWSv8QMalFJbfQLKbrkRrdcwHzcySfXhq1fF882ITJLeO00V2dxNFou');
 
+
 const app = express();
 const PORT = process.env.PORT || 3333;
-const isProd = process.env.PORT;
+
 
 // Middleware
-if (isProd) {
+if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
+
 app.use(express.json());
 app.use(cookieParser());
 
