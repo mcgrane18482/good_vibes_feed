@@ -11,7 +11,10 @@ const articleSchema = new Schema({
     content: {
         type: String
     },
-    image: {
+    urlToImage: {
+        type: String
+    },
+    url: {
         type: String
     },
     comments: [commentSchema]
