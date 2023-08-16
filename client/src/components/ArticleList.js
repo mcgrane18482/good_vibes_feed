@@ -40,7 +40,7 @@ export default function ArticleList() {
                             <h3 className="text-xl font-semibold mb-2">
                                 {article.title}
                             </h3>
-                            <p className="text-gray-700">{article.description}</p>
+                            <p className="text-gray-400">{article.description}</p>
                         </div>
                     </NavLink>
                 ))}
