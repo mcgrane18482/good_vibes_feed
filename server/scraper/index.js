@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
-const Article = require('../server/models/Article');
-const db = require('../server/config/connection');
+const Article = require('../models/Article');
+const db = require('../config/connection');
 
 const getEntertainment = () =>
     axios.get('https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=227799a716f94abe913e8808e7847dc5');

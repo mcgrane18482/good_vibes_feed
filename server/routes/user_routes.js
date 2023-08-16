@@ -11,7 +11,7 @@ async function isAuthenticated(req, res, next) {
 
         const data = await validateToken(token);
 
-        const user = await User.findById(data.user_id);
+        const user = await User.findById(data.userId);
 
         req.user = user;
 

@@ -8,8 +8,7 @@ import Comment from '../components/Comment';
 
 export default function SingleArticle() {
     const params = useParams();
-    const [article, setArticle] = useState({});
-    const [comments, setComments] = useState({});
+    const [article, setArticle] = useState(null);
 
     const [formData, setFormData] = useState({
         text: ''
@@ -17,7 +16,8 @@ export default function SingleArticle() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-        await axios.post(`/api/articles/${params.id}`, formData);
+        const { data: article } = await axios.post(`/api/articles/${params.id}`, formData);
+        setArticle(article);
 
     }
 
@@ -36,7 +36,7 @@ export default function SingleArticle() {
                 if (!articleData) {
                     throw new Error('No article was found with that id')
                 }
-
+                console.log(articleData);
                 setArticle(articleData);
                 console.log(article.urlToImage);
             } catch (err) {
@@ -49,27 +49,29 @@ export default function SingleArticle() {
 
     return (
         <>
-            <div className="article-container">
-                <div className="article-header">
-                    <h3>{article.title}</h3>
-                </div>
+            {article && (
+                <div className="article-container">
+                    <div className="article-header">
+                        <h3>{article.title}</h3>
+                    </div>
 
-                <div className="article-content">
-                    <h5>{article.description}</h5>
-                    <p>{article.content}</p>
-                    <a href={article.url}>Read full Article Here</a>
-                </div>
-                <form className="comment-form" onSubmit={handleSubmit}>
-                    <h2>Add a comment</h2>
-                    <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this article" />
-                    <button>Comment</button>
-                </form>
+                    <div className="article-content">
+                        <h5>{article.description}</h5>
+                        <p>{article.content}</p>
+                        <a href={article.url}>Read full Article Here</a>
+                    </div>
+                    <form className="comment-form" onSubmit={handleSubmit}>
+                        <h2>Add a comment</h2>
+                        <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this article" />
+                        <button>Comment</button>
+                    </form>
 
-                <div className="comments-section">
-                    {comments && <Comment />}
-                </div>
+                    <div className="comments-section">
+                        <Comment article={article} />
+                    </div>
 
-            </div>
+                </div>
+            )}
         </>
     )
 }

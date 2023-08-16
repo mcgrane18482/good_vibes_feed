@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const Article = require('../models/Article');
+const Comment = require('../models/Comment');
 const User = require('../models/User');
-const { createToken, validateToken } = require("../auth");
+const { validateToken } = require("../auth");
 
 async function isAuthenticated(req, res, next) {
     try {
@@ -11,8 +12,8 @@ async function isAuthenticated(req, res, next) {
 
         const data = await validateToken(token);
 
-        const user = await User.findById(data.user_id);
-
+        const user = await User.findById(data.userId);
+        console.log('user', user);
         req.user = user;
 
         next();
@@ -25,6 +26,7 @@ async function isAuthenticated(req, res, next) {
     }
 }
 
+// Get all articles
 router.get('/articles', async (req, res) => {
 
     try {
@@ -46,7 +48,13 @@ router.get('/articles', async (req, res) => {
 // localhost:3333/api/articles/:articleId
 router.get('/articles/:articleId', async (req, res) => {
     try {
-        const article = await Article.findById(req.params.articleId)
+        const article = await Article.findById(req.params.articleId).populate({
+            path: 'comments',
+            populate: {
+                path: 'user',
+                model: 'User'
+            }
+        });
         if (!article) {
             res.status(404).json({ "message": "No comment found with that id" });
         }
@@ -61,10 +69,9 @@ router.get('/articles/:articleId', async (req, res) => {
 // localhost:3333/api/articles/:articleId
 router.post('/articles/:articleId', isAuthenticated, async (req, res) => {
     try {
-        console.log(req.user._id);
         const articleId = req.params.articleId
 
-        const comment = await Comment.Create({
+        const comment = await Comment.create({
             ...req.body,
             user: req.user._id,
             article: articleId
@@ -73,16 +80,17 @@ router.post('/articles/:articleId', isAuthenticated, async (req, res) => {
             articleId,
             {
                 $push: {
-                    comments: {
-                        commentBody: req.body.text,
-                        user: req.user._id
-                    }
+                    comments: comment._id
                 }
             },
-            { runValidators: true, new: true });
-        if (!article) {
-            res.status(404).json({ "message": "No comment found with that id" });
-        }
+            { new: true }).populate({
+                path: 'comments',
+                populate: {
+                    path: 'user',
+                    model: 'User'
+                }
+            });
+        console.log(article);
         res.json(article);
     } catch (err) {
         console.log(err);
