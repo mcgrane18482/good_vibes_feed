@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { getOneArticle } from '../utils/api';
 import { useParams } from "react-router-dom";
 
-
 export default function SingleArticle() {
     const params = useParams();
     const [article, setArticle] = useState({});
@@ -26,14 +25,17 @@ export default function SingleArticle() {
     }, [params.id]);
 
     return (
-        <div className="sticky-footer">
-            <h1>Article</h1>
-            <h3>{article.title}</h3>
-            <img src={article.urlToImage} alt=''/>
-            <h5>{article.description}</h5>
-            <p>{article.content}</p>
-            <a href={article.url}>{article.url}</a>
-            <p>{article.comments}</p>
+        <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center py-10">
+            <div className="max-w-4xl bg-white rounded-lg shadow-lg p-8 w-full">
+                <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
+                <img src={article.urlToImage} alt='' className="w-full rounded-lg mb-4" />
+                <h5 className="text-lg mb-2">{article.description}</h5>
+                <p className="mb-4">{article.content}</p>
+                <a href={article.url} className="text-blue-500 hover:underline mb-4">
+                    {article.url}
+                </a>
+                <p className="mb-4">Comments: {article.comments}</p>
+            </div>
         </div>
     )
 }
