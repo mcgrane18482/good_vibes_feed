@@ -1,17 +1,11 @@
-export const getArticles = () => {
-    return fetch('/api/articles', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-};
+import axios from 'axios';
 
-export const getOneArticle = (param) => {
-    return fetch(`/api/articles/${param}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-    });
-};
+export const getArticles = async () => {
+    const res = await axios.get('/api/articles')
+    return res.data;
+
+}
+export const getOneArticle = async (articleId) => {
+    const res = await axios.get(`/api/articles/${articleId}`)
+    return res.data;
+}

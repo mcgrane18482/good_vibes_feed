@@ -5,7 +5,7 @@ export default function Header(props) {
     const logout = async e => {
         e.preventDefault();
 
-        await axios.get('/api/logout');
+        await axios.get('/user/logout');
 
         props.setState((oldState) => {
             return {
@@ -17,7 +17,7 @@ export default function Header(props) {
 
     return (
         <header className="row justify-between align-center">
-      
+
             <h1 className='text-center'>Good Vibes Feed</h1>
 
             <nav className="row">
