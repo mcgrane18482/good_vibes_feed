@@ -2,7 +2,7 @@ const router = require('express').Router();
 const User = require('../models/User');
 const { createToken, validateToken } = require("../auth")
 
-// We don't need this yet
+
 // async function isAuthenticated(req, res, next) {
 //     try {
 //         const token = req.cookies.token;
