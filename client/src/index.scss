@@ -3,6 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '@fortawesome/fontawesome-free/css/all.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
@@ -77,6 +78,12 @@ header {
     padding: 6px 3%;
     color: darkblue;
     margin-bottom: 5px;
+    height: 75px;
+
+    h1 {
+        font-size: 25px;
+        font-weight: bolder;
+    }
 
     nav {
         p.header-username {
