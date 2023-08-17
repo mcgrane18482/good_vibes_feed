@@ -122,27 +122,27 @@ router.delete('/articles/:articleId/:commentId', async (req, res) => {
 });
 
 // Get all comments
-router.get('/articles/:articleId/comments', async (req, res) => {
+// router.get('/articles/:articleId/comments', async (req, res) => {
 
-    try {
-        const articleId = req.params.articleId;
-        const article = await Article.findById(articleId).populate({
-            path: 'comments',
-            populate: {
-                path: 'user',
-                model: 'User'
-            }
-        });
+//     try {
+//         const articleId = req.params.articleId;
+//         const article = await Article.findById(articleId).populate({
+//             path: 'comments',
+//             populate: {
+//                 path: 'user',
+//                 model: 'User'
+//             }
+//         });
 
-        if (article.length === 0) {
-            return res.status(404).json({ message: 'No articles found with those keywords' });
-        }
-        const comments = article.comments;
-        res.json(comments);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: 'An error occurred while fetching articles' });
-    }
-})
+//         if (article.length === 0) {
+//             return res.status(404).json({ message: 'No articles found with those keywords' });
+//         }
+//         const comments = article.comments;
+//         res.json(comments);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ message: 'An error occurred while fetching articles' });
+//     }
+// })
 
 module.exports = router;
