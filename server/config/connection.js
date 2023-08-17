@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
+const isProd = process.env.PORT;
 
 
-mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://emcgrane:${process.env.MONGO_ATLAS}@cluster0.fxnbj0s.mongodb.net/good_vibes_db`);
+mongoose.connect(isProd ? process.env.MONGODB_URI : 'mongodb://127.0.0.1:27017/good_vibes_db');
 
 module.exports = mongoose.connection;

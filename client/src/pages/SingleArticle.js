@@ -1,10 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { getOneArticle } from '../utils/api';
 import { useParams } from "react-router-dom";
+import axios from 'axios';
+import Comment from '../components/Comment';
 
 export default function SingleArticle() {
     const params = useParams();
     const [article, setArticle] = useState({});
+
+    const [formData, setFormData] = useState({
+        text: ''
+    });
+
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const { data: article } = await axios.post(`/api/articles/${params.id}`, formData);
+        setArticle(article);
+
+    }
+
+    const handleInputChange = e => {
+        setFormData({
+            ...formData,
+            text: e.target.value
+        });
+    };
 
     useEffect(() => {
         const getArticle = async () => {
@@ -13,7 +33,7 @@ export default function SingleArticle() {
                 if (!articleData) {
                     throw new Error('No article was found with that id')
                 }
-
+                console.log(articleData)
                 setArticle(articleData);
             } catch (err) {
                 console.log(err);
@@ -21,6 +41,7 @@ export default function SingleArticle() {
         }
         getArticle();
     }, [params.id]);
+
 
     return (
         <div className="bg-gradient-to-b from-gray-800 to-gray-900 text-white min-h-screen">
@@ -36,9 +57,18 @@ export default function SingleArticle() {
                         href={article.url}
                         className="text-blue-500 hover:underline mb-4"
                     >
-                        {article.url}
+                        Read Full Article
                     </a>
-                    <p className="mb-4">Comments: {article.comments}</p>
+                    <form className="comment-form" onSubmit={handleSubmit}>
+                        <h2>Add a comment</h2>
+                        <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this article" />
+                        <button>Comment</button>
+                    </form>
+
+                    <div className="comments-section">
+                        <Comment articleId={article._id} />
+                    </div>
+                    {/* <p className="mb-4">Comments: {article.comments}</p> */}
                 </div>
             </main>
         </div>
