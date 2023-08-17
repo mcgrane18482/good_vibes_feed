@@ -126,7 +126,13 @@ router.get('/articles/:articleId/comments', async (req, res) => {
 
     try {
         const articleId = req.params.articleId;
-        const article = await Article.findById(articleId);
+        const article = await Article.findById(articleId).populate({
+            path: 'comments',
+            populate: {
+                path: 'user',
+                model: 'User'
+            }
+        });
 
         if (article.length === 0) {
             return res.status(404).json({ message: 'No articles found with those keywords' });
