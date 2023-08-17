@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { getOneArticle } from '../utils/api';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
-import article from '../pages/styles/article.scss';
 import Comment from '../components/Comment';
 
 export default function SingleArticle() {
     const params = useParams();
-    const [article, setArticle] = useState(null);
+    const [article, setArticle] = useState({});
 
     const [formData, setFormData] = useState({
         text: ''
@@ -34,7 +33,7 @@ export default function SingleArticle() {
                 if (!articleData) {
                     throw new Error('No article was found with that id')
                 }
-                console.log(articleData);
+                console.log(articleData)
                 setArticle(articleData);
             } catch (err) {
                 console.log(err);
@@ -45,33 +44,6 @@ export default function SingleArticle() {
 
 
     return (
-<<<<<<< HEAD
-        <>
-            {article && (
-                <div className="article-container">
-                    <div className="article-header">
-                        <h3>{article.title}</h3>
-                    </div>
-
-                    <div className="article-content">
-                        <h5>{article.description}</h5>
-                        <p>{article.content}</p>
-                        <a href={article.url}>Read full Article Here</a>
-                    </div>
-                    <form className="comment-form" onSubmit={handleSubmit}>
-                        <h2>Add a comment</h2>
-                        <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this article" />
-                        <button>Comment</button>
-                    </form>
-
-                    <div className="comments-section">
-                        <Comment article={article} />
-                    </div>
-
-                </div>
-            )}
-        </>
-=======
         <div className="bg-gradient-to-b from-gray-800 to-gray-900 text-white min-h-screen">
             <main className="max-w-5xl mx-auto px-4 py-12">
                 <div className="bg-gray-600 rounded-lg shadow-lg p-8">
@@ -87,10 +59,18 @@ export default function SingleArticle() {
                     >
                         {article.url}
                     </a>
-                    <p className="mb-4">Comments: {article.comments}</p>
+                    <form className="comment-form" onSubmit={handleSubmit}>
+                        <h2>Add a comment</h2>
+                        <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this article" />
+                        <button>Comment</button>
+                    </form>
+
+                    <div className="comments-section">
+                        <Comment articleId={article._id} />
+                    </div>
+                    {/* <p className="mb-4">Comments: {article.comments}</p> */}
                 </div>
             </main>
         </div>
->>>>>>> 1ea86613762e3d392d0efc744b3481dff899e477
     )
 }

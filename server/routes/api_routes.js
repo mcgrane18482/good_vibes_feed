@@ -55,9 +55,6 @@ router.get('/articles/:articleId', async (req, res) => {
                 model: 'User'
             }
         });
-        if (!article) {
-            res.status(404).json({ "message": "No comment found with that id" });
-        }
         res.json(article);
     } catch (err) {
         console.log(err);
@@ -90,7 +87,6 @@ router.post('/articles/:articleId', isAuthenticated, async (req, res) => {
                     model: 'User'
                 }
             });
-        console.log(article);
         res.json(article);
     } catch (err) {
         console.log(err);
@@ -126,16 +122,16 @@ router.delete('/articles/:articleId/:commentId', async (req, res) => {
 });
 
 // Get all comments
-router.get('/articles/comments', async (req, res) => {
+router.get('/articles/:articleId/comments', async (req, res) => {
 
     try {
+        const articleId = req.params.articleId;
+        const article = await Article.findById(articleId);
 
-        const comments = await Comment.find();
-
-        if (comments.length === 0) {
+        if (article.length === 0) {
             return res.status(404).json({ message: 'No articles found with those keywords' });
         }
-
+        const comments = article.comments;
         res.json(comments);
     } catch (error) {
         console.error(error);
