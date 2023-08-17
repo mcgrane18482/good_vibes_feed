@@ -55,7 +55,7 @@ db.once('open', async () => {
     ]);
     console.log("articles seeded");
 
-    const articles = await Article.find({ $text: { $search: "good happy celebrate sweet rescue safe saved wins succeeds cute hero reunion" } });
+    const articles = await Article.find({ $text: { $search: "good happy celebrate sweet rescue safe saved wins succeeds cute hero reunion -Taliban -dies -death -Trump -Biden" } });
     await Article.deleteMany({});
     await Article.insertMany(articles);
     console.log(articles.length);
