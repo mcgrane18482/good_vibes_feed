@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
-const Article = require('../server/models/Article');
-const db = require('../server/config/connection');
+const Article = require('../models/Article');
+const db = require('../config/connection');
 
 const getEntertainment = () =>
     axios.get('https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=227799a716f94abe913e8808e7847dc5');
@@ -55,7 +55,7 @@ db.once('open', async () => {
     ]);
     console.log("articles seeded");
 
-    const articles = await Article.find({ $text: { $search: "good happy celebrate sweet rescue safe saved wins succeeds cute hero reunion -Taliban -death -dies -killed -kills" } });
+    const articles = await Article.find({ $text: { $search: "good happy celebrate sweet rescue safe saved wins succeeds cute hero reunion -Taliban -dies -death -Trump -Biden" } });
     await Article.deleteMany({});
     await Article.insertMany(articles);
     console.log(articles.length);

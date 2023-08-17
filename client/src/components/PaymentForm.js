@@ -40,7 +40,7 @@ const CheckoutForm = () => {
             elements,
             clientSecret: client_secret,
             confirmParams: {
-                return_url: 'http://localhost:3000/redirect',
+                return_url: 'https://good-vibes-feed-0f727cb91a84.herokuapp.com/',
             },
             redirect: 'always'
         });
