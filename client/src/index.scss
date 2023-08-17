@@ -299,3 +299,57 @@ form {
     position: relative;
     top: 150px;
 }
+
+.comment-form {
+margin-top: 7rem;
+display: flex;
+flex-direction: column;
+align-items: flex-start; 
+}
+
+.comment-form h2 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 0.5rem;
+margin: 0 auto;
+margin-bottom: 10px;
+}
+
+.comment-form input[type="text"] {
+width: 100%;
+padding: 0.5rem;
+border: 1px solid #ccc;
+border-radius: 0.25rem;
+color: black;
+margin-bottom: 10px;
+}
+
+.comment-form button {
+padding: 0.5rem 1rem;
+background-color: #4a90e2;
+color: white;
+border: none;
+border-radius: 0.25rem;
+cursor: pointer;
+margin: 0 auto;
+}
+
+.comments-section h2 {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 1rem;
+}
+
+.comments-section .bg-white {
+padding: 1rem;
+border-radius: 0.25rem;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments-section .text-gray-800 {
+font-size: 1rem;
+}
+
+.comments-section .text-gray-600 {
+font-size: 0.875rem;
+}
