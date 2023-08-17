@@ -13,10 +13,14 @@ export default function SingleArticle() {
     });
 
     const handleSubmit = async e => {
-        e.preventDefault();
+        // e.preventDefault();
         const { data: article } = await axios.post(`/api/articles/${params.id}`, formData);
         setArticle(article);
 
+        setFormData({
+            text: '',
+            username: ''
+        });
     }
 
     const handleInputChange = e => {
