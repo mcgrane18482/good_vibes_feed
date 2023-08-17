@@ -29,7 +29,7 @@ export default function Comment() {
             {comments.map(comment => (
                 <div key={comment._id} className="comment">
                     <p className="comment-text">{comment.text}</p>
-                    <p>By:{comment.user.username}</p>
+                    <p>By: {comment.user.username}</p>
                 </div>
             ))}
         </div>
