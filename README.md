@@ -1,6 +1,6 @@
 # Good Vibes Feed - README
 
-Welcome to the Good Vibes Feed project! This is a web application built using React for the frontend and Node.js with Express and MongoDB for the backend. The project aims to provide a platform where users can read and comment on positive and inspiring articles. Below, you'll find information about the project structure, setup, and key components.
+Welcome to the [Good Vibes Feed](https://good-vibes-feed-0f727cb91a84.herokuapp.com/) project! This is a web application built using React for the frontend and Node.js with Express and MongoDB for the backend. The project aims to provide a platform where users can read and comment on positive and inspiring articles. Below, you'll find information about the project structure, setup, and key components.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -16,6 +16,8 @@ Welcome to the Good Vibes Feed project! This is a web application built using Re
 The project consists of both frontend and backend components. The frontend is built using React, and the backend utilizes Node.js with Express for creating APIs and MongoDB for database storage.
 
 ## Getting Started
+
+To visit the site, check us out [here](https://good-vibes-feed-0f727cb91a84.herokuapp.com/)
 
 To run the Good Vibes Feed app [locally](http://localhost:3000/), follow the steps below.
 
@@ -76,14 +78,14 @@ Key files and folders:
 - `client/src/pages/AuthForm.js`: Provides a login and registration form for users.
 
 ## Contributing
-Contributions to the Good Vibes Feed project are welcome! Feel free to submit issues, suggestions, or pull requests. When contributing code changes, please follow the existing coding style and conventions.
+Contributions to the [Good Vibes Feed](https://good-vibes-feed-0f727cb91a84.herokuapp.com/) project are welcome! Feel free to submit issues, suggestions, or pull requests. When contributing code changes, please follow the existing coding style and conventions.
 
 ## License
-The Good Vibes Feed project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code according to the terms of the license.
+The [Good Vibes Feed](https://good-vibes-feed-0f727cb91a84.herokuapp.com/) project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute the code according to the terms of the license.
 
 ---
 
-Thank you for checking out the Good Vibes Feed project! We hope you enjoy using the app and find it a source of positivity and inspiration. If you have any questions or feedback, please don't hesitate to contact us.
+Thank you for checking out the [Good Vibes Feed](https://good-vibes-feed-0f727cb91a84.herokuapp.com/) project! We hope you enjoy using the app and find it a source of positivity and inspiration. If you have any questions or feedback, please don't hesitate to contact us.
 
 Created with ❤️ by the Good Vibes Feed Team:
 
