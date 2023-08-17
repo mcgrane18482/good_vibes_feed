@@ -57,7 +57,7 @@ export default function SingleArticle() {
                         href={article.url}
                         className="text-blue-500 hover:underline mb-4"
                     >
-                        {article.url}
+                        Read Full Article
                     </a>
                     <form className="comment-form" onSubmit={handleSubmit}>
                         <h2>Add a comment</h2>
