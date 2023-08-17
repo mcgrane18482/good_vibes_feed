@@ -60,7 +60,7 @@ export default function SingleArticle() {
                         </a>
                         <form className="comment-form" onSubmit={handleSubmit}>
                             <h2>Add a comment</h2>
-                            <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this articleData" />
+                            <input name="text" value={formData.text} type="text" onChange={handleInputChange} placeholder="Leave a comment on this article" />
                             <button>Comment</button>
                         </form>
 
